@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .options {
+        padding: 20px;
+        margin-top: 20px;
+        background-color: rgba(191, 191, 191, 0.15);
+    }
+
+    .caption {
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    .option {
+        margin-top: 10px;
+    }
+
+    .option > span {
+        position: relative;
+        top: 2px;
+        margin-right: 10px;
+    }
+
+    .option > .dx-widget {
+        width: 500px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+</style>
+
+<div class="options">
+    <div class="option">
+        <span>Частота обновления:</span>
+        <div id="frequency-slider"></div>
+    </div>
+</div>
+    <div id="gridContainer"></div>

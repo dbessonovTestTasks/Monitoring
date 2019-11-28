@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29230.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringClient", "MonitoringClient\MonitoringClient.csproj", "{58AFD960-7BD2-4EA6-B5DD-4290E5E7BD02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringServer", "MonitoringServer\MonitoringServer.csproj", "{2AD60484-7B44-4B0A-B755-E5D3DD24F395}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58AFD960-7BD2-4EA6-B5DD-4290E5E7BD02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58AFD960-7BD2-4EA6-B5DD-4290E5E7BD02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58AFD960-7BD2-4EA6-B5DD-4290E5E7BD02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58AFD960-7BD2-4EA6-B5DD-4290E5E7BD02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AD60484-7B44-4B0A-B755-E5D3DD24F395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AD60484-7B44-4B0A-B755-E5D3DD24F395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AD60484-7B44-4B0A-B755-E5D3DD24F395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AD60484-7B44-4B0A-B755-E5D3DD24F395}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87AAB817-7463-43CE-811F-CB2A8F0CF328}
+	EndGlobalSection
+EndGlobal
