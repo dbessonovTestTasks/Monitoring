@@ -15,7 +15,7 @@ namespace MonitoringClient
 
             IConfigurationRoot configuration = builder.Build();
 
-            var hubWorker = new HubWorker(configuration.GetConnectionString("RemoteHUB"))
+            var hubWorker = new HubWorker<ComputerInfo>(configuration.GetConnectionString("RemoteHUB"))
                 .SetMessageCreator(new ComputerInfoCreator())
                 .InjectLogWriter(Console.WriteLine);
 

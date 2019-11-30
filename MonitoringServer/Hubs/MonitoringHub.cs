@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.Extensions.Logging;
 using MonitoringServer.Models;
 
 namespace MonitoringServer.Hubs
@@ -10,13 +11,16 @@ namespace MonitoringServer.Hubs
     
     public class MonitoringHub : Hub
     {
-        private static object _intervalLocker = new object();
-        private static int _interval = 11;
-        public async Task SendInterval(int interval)
+        private static IntervalTicker _ticker;
+
+        public MonitoringHub(IntervalTicker ticker)
         {
-            lock (_intervalLocker)
-                _interval = interval;
-            await Clients.All.SendAsync("RefreshTimeChanged", interval);
+            _ticker = ticker;
+        }
+
+        public void SendInterval(int interval)
+        {
+            _ticker.AddInterval(interval);
         }
 
         public async Task SendInfo(ComputerInfo data)
@@ -29,7 +33,7 @@ namespace MonitoringServer.Hubs
         public async Task AddToGroup(string groupName)
         {
             await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
-            await Clients.Caller.SendAsync("RefreshTimeChanged", _interval);
+            await Clients.Caller.SendAsync("RefreshTimeChanged", _ticker.CurrentInterval);
         }
     }
 }

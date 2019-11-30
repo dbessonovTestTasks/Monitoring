@@ -8,9 +8,9 @@ using Microsoft.AspNetCore.SignalR.Client;
 
 namespace MonitoringClient
 {
-    class HubWorker
+    class HubWorker<T>
     {
-        private IMessageCreator _messageCreator;
+        private IMessageCreator<T> _messageCreator;
         private Action<string> _logWriter;
         private string _url;
         private HubConnection _connection;
@@ -38,13 +38,13 @@ namespace MonitoringClient
             _url = url;
         }
 
-        public HubWorker SetMessageCreator(IMessageCreator messageCreator)
+        public HubWorker<T> SetMessageCreator(IMessageCreator<T> messageCreator)
         {
             _messageCreator = messageCreator;
             return this;
         }
 
-        public HubWorker InjectLogWriter(Action<string> logWriter)
+        public HubWorker<T> InjectLogWriter(Action<string> logWriter)
         {
             _logWriter = logWriter;
             return this;

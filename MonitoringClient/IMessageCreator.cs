@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace MonitoringClient
 {
-    interface IMessageCreator
+    interface IMessageCreator<T>
     {
-        Task<object> GetMessage();
+        Task<T> GetMessage();
     }
 }
